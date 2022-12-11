@@ -1,0 +1,19 @@
+{
+    "name": "louis_plugins/hackernewsfeed",
+    "description": "Displays a news feed of articles from Hacker News.",
+    "authors": [
+        {
+            "name": "Louis Spost",
+            "email": "louis.spost@gmail.com"
+        }
+    ],
+    "config": {
+      "vendor-dir": "lib"
+    },
+    "autoload": {
+      "psr-4": {
+        "Louis_Plugins\\HackerNewsFeed\\": "inc/"
+      }
+    }
+}
+
