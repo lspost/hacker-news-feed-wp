@@ -46,7 +46,7 @@ class Api_Manager {
 		if ( isset( $response['body'] ) ) {
 			$retrieved_story_ids = json_decode( $response['body'] );
 
-			$this->story_ids[ $type ] = array_merge( $this->story_ids[ $type ], $retrieved_story_ids );
+			$this->story_ids[ $type ] = array_merge( $retrieved_story_ids, $this->story_ids[ $type ] );
 		}
 	}
 

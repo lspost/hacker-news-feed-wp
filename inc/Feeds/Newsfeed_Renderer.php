@@ -9,6 +9,7 @@ namespace Louis_Plugins\HackerNewsFeed\Feeds;
 
 use Louis_Plugins\HackerNewsFeed\Api\Api_Manager as Api_Manager;
 use Louis_Plugins\HackerNewsFeed\Feeds\Feed_Types as Feed_Types;
+use Louis_Plugins\HackerNewsFeed\Data\Stories as Data_Stories;
 
 /**
  * Newsfeed Renderer Class
@@ -26,8 +27,10 @@ class Newsfeed_Renderer {
 		ob_start();
 
 		// TODO Remove API Manager stuff here. This is just to check how data retrieval is going while I'm setting things up.
-		$api_manager = new Api_Manager();
-		$stories     = $api_manager->get_stories( Feed_Types::NEWEST, 5 );
+		// $api_manager = new Api_Manager();
+		// $stories     = $api_manager->get_stories( Feed_Types::BEST, 20 );
+
+		Data_Stories::ensure_db();
 		?>
 
 		<div data-props="<?php echo esc_attr( wp_json_encode( $props ) ); ?>">
@@ -41,6 +44,8 @@ class Newsfeed_Renderer {
 				<?php foreach ( $stories as $story ) : ?>
 				<li>
 				  <a href="<?php echo esc_attr( $story->url ); ?>"><?php echo esc_html( $story->title ); ?></a>
+				  <p>Date: <?php echo gmdate( 'g:iA m/d/Y', $story->time ); ?></p>
+				  <p>Score: <?php echo esc_html( $story->score ); ?></p>
 				</li>
 				<?php endforeach ?>
 			</ul>

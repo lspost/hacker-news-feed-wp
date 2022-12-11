@@ -39,13 +39,13 @@ class Settings_Links {
 	public static function add_settings_link( $links ) {
 		$new_links    = array();
 		$settings_url = admin_url( 'options-general.php?page=hacker-news-feed' );
-		$docs_url     = 'https://docs.dlxplugins.com/';
-		$site_url     = 'https://dlxplugins.com';
+		$docs_url     = 'https://plugindocs&supportlinkhere.com/';
+		$site_url     = 'https://companywebsitelinkhere.com';
 
 		if ( current_user_can( 'manage_options' ) ) {
 			$new_links['hacker-news_settings'] = sprintf( '<a href="%s">%s</a>', esc_url( $settings_url ), _x( 'Settings', 'Options link', 'hacker-news-feed' ) );
-			$new_links['hacker-news_docs']     = sprintf( '<a href="%s">%s</a>', esc_url( $docs_url ), _x( 'Docs', 'Plugin Documentation', 'hacker-news-feed' ) );
-			$new_links['hacker-new_site']      = sprintf( '<a href="%s">%s</a>', esc_url( $site_url ), _x( 'DLXPlugins', 'Plugin site', 'hacker-news-feed' ) );
+			$new_links['hacker-news_docs']     = sprintf( '<a href="%s">%s</a>', esc_url( $docs_url ), _x( 'Support', 'Plugin Documentation', 'hacker-news-feed' ) );
+			$new_links['hacker-new_site']      = sprintf( '<a href="%s">%s</a>', esc_url( $site_url ), _x( 'Louis Plugins', 'Plugin site', 'hacker-news-feed' ) );
 		}
 
 		return array_merge( $new_links, $links );
