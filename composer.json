@@ -8,12 +8,20 @@
         }
     ],
     "config": {
-      "vendor-dir": "lib"
+      "vendor-dir": "lib",
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        }
     },
     "autoload": {
       "psr-4": {
         "Louis_Plugins\\HackerNewsFeed\\": "inc/"
       }
+    },
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.8"
+    },
+    "require": {
+        "deliciousbrains/wp-background-processing": "^1.0"
     }
 }
-

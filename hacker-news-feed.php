@@ -25,6 +25,8 @@ if ( file_exists( __DIR__ . '/lib/autoload.php' ) ) {
 	require_once __DIR__ . '/lib/autoload.php';
 }
 
+use Louis_Plugins\HackerNewsFeed\Data\Stories as StoriesDb;
+
 /**
  * HackerNewsFeed class.
  */
@@ -74,8 +76,23 @@ class HackerNewsFeed {
 	 */
 	public function init() {
 		Admin\Register_Block::run();
+		// $tester = new Create_Table_Background();
+		// $tester->dispatch();
 	}
+
 }
+
+/**
+ * Plugin Activation Code
+ */
+register_activation_hook(
+	__FILE__,
+	function() {
+		StoriesDb::ensure_db();
+	}
+);
+
+// TODO add deactivation hook for DB and other cleanup.
 
 add_action(
 	'plugins_loaded',

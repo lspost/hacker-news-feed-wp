@@ -29,8 +29,6 @@ class Newsfeed_Renderer {
 		// TODO Remove API Manager stuff here. This is just to check how data retrieval is going while I'm setting things up.
 		// $api_manager = new Api_Manager();
 		// $stories     = $api_manager->get_stories( Feed_Types::BEST, 20 );
-
-		Data_Stories::ensure_db();
 		?>
 
 		<div data-props="<?php echo esc_attr( wp_json_encode( $props ) ); ?>">
