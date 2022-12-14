@@ -18,10 +18,10 @@
         "Louis_Plugins\\HackerNewsFeed\\": "inc/"
       }
     },
-    "require-dev": {
-        "bamarni/composer-bin-plugin": "^1.8"
-    },
     "require": {
         "deliciousbrains/wp-background-processing": "^1.0"
+    },
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.8"
     }
 }

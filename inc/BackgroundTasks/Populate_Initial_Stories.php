@@ -25,6 +25,7 @@ class Populate_Initial_Stories extends WP_Async_Request {
 	 * Handle action
 	 */
 	protected function handle() {
-		error_log( 'This is a test' );
+		// sleep( 10 );
+		error_log( 'This from a background process!!! (' . time() . ')' );
 	}
 }

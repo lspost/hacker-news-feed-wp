@@ -16,7 +16,7 @@ return array(
 	// will be generated instead.
 	//
 	// For more see: https://github.com/humbug/php-scoper/blob/master/docs/configuration.md#prefix
-	'prefix'                  => 'hnf',
+	'prefix'                  => 'Louis_Plugins\HackerNewsFeed\Vendor',
 
 	// By default when running php-scoper add-prefix, it will prefix all relevant code found in the current working
 	// directory. You can however define which files should be scoped by defining a collection of Finders in the
@@ -26,6 +26,7 @@ return array(
 	//
 	// For more see: https://github.com/humbug/php-scoper/blob/master/docs/configuration.md#finders-and-paths
 	'finders'                 => array(
+		Finder::create()->files()->in( 'inc' ),
 		Finder::create()
 			->files()
 			->ignoreVCS( true )

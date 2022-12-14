@@ -10,6 +10,7 @@ namespace Louis_Plugins\HackerNewsFeed\Feeds;
 use Louis_Plugins\HackerNewsFeed\Api\Api_Manager as Api_Manager;
 use Louis_Plugins\HackerNewsFeed\Feeds\Feed_Types as Feed_Types;
 use Louis_Plugins\HackerNewsFeed\Data\Stories as Data_Stories;
+use Louis_Plugins\HackerNewsFeed\BackgroundTasks\Background_Task_Manager as Background_Task_Manager;
 
 /**
  * Newsfeed Renderer Class
@@ -29,6 +30,10 @@ class Newsfeed_Renderer {
 		// TODO Remove API Manager stuff here. This is just to check how data retrieval is going while I'm setting things up.
 		// $api_manager = new Api_Manager();
 		// $stories     = $api_manager->get_stories( Feed_Types::BEST, 20 );
+		$stories = array();
+
+		$bg_task_manager = Background_Task_Manager::get_instance();
+		$bg_task_manager::run_task( 'populate_initial_stories' );
 		?>
 
 		<div data-props="<?php echo esc_attr( wp_json_encode( $props ) ); ?>">

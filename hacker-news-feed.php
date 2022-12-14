@@ -26,6 +26,7 @@ if ( file_exists( __DIR__ . '/lib/autoload.php' ) ) {
 }
 
 use Louis_Plugins\HackerNewsFeed\Data\Stories as StoriesDb;
+use Louis_Plugins\HackerNewsFeed\BackgroundTasks\Background_Task_Manager as Background_Task_Manager;
 
 /**
  * HackerNewsFeed class.
@@ -76,8 +77,7 @@ class HackerNewsFeed {
 	 */
 	public function init() {
 		Admin\Register_Block::run();
-		// $tester = new Create_Table_Background();
-		// $tester->dispatch();
+		Background_Task_Manager::get_instance();
 	}
 
 }
