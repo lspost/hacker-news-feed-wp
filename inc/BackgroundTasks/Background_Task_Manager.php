@@ -34,7 +34,7 @@ class Background_Task_Manager {
 	public static function get_instance() {
 		if ( null === self::$instance ) {
 			self::$instance = new self();
-			self::init();
+			self::$instance::init();
 		}
 
 		return self::$instance;
